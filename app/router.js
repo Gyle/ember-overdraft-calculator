@@ -7,6 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('statements', function() {});
+  this.route('show-statement', { path: 'statements/:statement_id' });
+  this.route('oh-no',{ path: '/*' });
 });
 
 export default Router;

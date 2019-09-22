@@ -1,0 +1,19 @@
+<h3>{{get (get this.model 0) "accountHolder"}}</h3>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Account Number</th>
+      <th scope="col">Account Type</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.model as | account|}}
+      <StatementListing @account={{account}} />
+    {{/each}}
+  </tbody>
+</table>
+

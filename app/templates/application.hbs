@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="container">
+  <div class="menu">
+    {{#link-to "index"}}
+      <h1>
+        <em>Kyle's Overdraft Calculator</em>
+      </h1>
+    {{/link-to}}
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>

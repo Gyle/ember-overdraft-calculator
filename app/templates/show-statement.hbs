@@ -1,0 +1,36 @@
+{{#if this.model}}
+  <i>
+    As at <b>{{this.model.dateTime}} </b>
+  </i>
+  <br><br>
+  <h4>{{this.model.accountType}}</h4>
+  <p><b>Account Number: </b>{{this.model.account}}</p>
+  <hr>
+  <p><b>Account Holder: </b>{{this.model.accountHolder}}</p>
+  <p><b>Start of the month balance: </b>${{this.model.startMonthBalance}}</p>
+  <p><b>Total Spending for the month: </b>${{this.model.totalMonthSpending}}</p>
+  <p><b>Overdraft Limit: </b>${{this.model.creditLimit}}</p>
+  <p>
+      <b>Interest Charged ({{this.model.interestRate}}): </b>
+      ${{interest this.model.interestRate this.model.startMonthBalance this.model.totalMonthSpending this.model.creditLimit}}
+  </p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Transaction Description</th>
+      <th scope="col">Debit/Cheque</th>
+      <th scope="col">Credit/Deposit</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{!-- {{#each this.model as | transaction|}}
+        <StatementMonth @transaction={{transaction}} />
+    {{/each}} --}}
+    <StatementMonth @transaction={{this.model.transactions}} />
+  </tbody>
+</table>
+{{else}}
+  Oh no, something went wrong
+{{/if}}
