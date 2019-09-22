@@ -12,7 +12,7 @@ module('Integration | Component | statement-month', function(hooks) {
 
     await render(hbs`<StatementMonth />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), '$\n$\n$');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | statement-month', function(hooks) {
       </StatementMonth>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '$\n$\n$');
   });
 });

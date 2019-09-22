@@ -12,7 +12,7 @@ module('Integration | Component | statement-listing', function(hooks) {
 
     await render(hbs`<StatementListing />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), '$\n$');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | statement-listing', function(hooks) {
       </StatementListing>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '$\n$');
   });
 });

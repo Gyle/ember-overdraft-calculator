@@ -69,9 +69,8 @@ export default Route.extend({
 
         // return nothing if not in range
         if ( !(params.statement_id >= 0 &&  params.statement_id < accounts.length) ){
-            console.log("go to oh no")
             this.transitionTo('oh-no');
-            return undefined
+            return undefined;
         }
     
         if(params.statement_id !== ''){

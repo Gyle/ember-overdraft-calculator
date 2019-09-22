@@ -12,7 +12,7 @@ module('Acceptance | list statements', function(hooks) {
 
   test('should list available accounts.', async function(assert) {
     await visit('/');
-    assert.equal(this.element.querySelectorAll('.listing').length, 3, 'should display 3 listings');
+    assert.equal(this.element.querySelectorAll('tr').length, 4, 'should display 3 listings (1 + 3)');
   });
 
 
